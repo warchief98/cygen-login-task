@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/bootstrap-5.3/bootstrap.min.css" rel="stylesheet"></link>
+    <!-- minified single  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" >
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+    <!-- .dark toggle according to id=mainContainer in every route -->
+    <div id="mainContainer" class="sing-up-container">
+        <!-- swith theme btn -->
+        <div class="form-switch theme-switch-box">
+            <label class="form-check-label" for="switch1">Theme</label>
+            <input class="form-check-input" type="checkbox" role="switch" id="switch1">
+        </div>
+        <!-- logo -->
+        <div class="left-box container">
+            <div class="d-flex align-items-baseline logo">
+                <h3>BALA</h3>
+                <div class="blue-dot"></div>
+            </div>
+            <p>Welcome. Start your journey now with our management system!</p>
+        </div>
+        <div class="right-box">
+            <form>
+                <div class="create-acc-box gap-2">
+                    <h2>Create an account</h2>
+                    <!-- Email input -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+                    <!-- Password input -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="pass-input-container">
+                          <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                          <i class="bi bi-eye" id="togglePassword"></i>
+                        </div>
+                    </div>
+                    <!-- Create button -->
+                    <button class="btn btn-primary mb-3" type="button">
+                        Create account
+                    </button>   
+                    <!-- Google button -->
+                    <button class="btn google-btn mb-2">
+                        <img src="asset/icon/Logo-google-2.png" alt="google LOGO">
+                        <span>Continue with Google</span>
+                    </button>
+
+                <div class="have-acc">
+                    <p>Already Have An Account?</p>
+                    <a href="login.html">Log in</a>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+
+    <script src="css/bootstrap-5.3/bootstrap.bundle.min.js"></script>
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+        
+        // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+            // toggle the eye icon
+            this.classList.toggle('bi-eye');
+            this.classList.toggle('bi-eye-slash');
+        });
+
+
+        // theme switch
+        let switchInput = document.getElementById('switch1')
+        let wrapper = document.getElementById('mainContainer')
+        // let leftBox = document.getElementsByClassName[0]('left-box')
+
+        switchInput.addEventListener('click', ()=> {
+            wrapper.classList.toggle('dark')
+            if(switchInput.checked){
+                console.log('checked')
+            }else{
+                console.log('not checked')
+            }
+        })
+    </script>
+</body>
+</html>

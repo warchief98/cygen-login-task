@@ -1,0 +1,148 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+.sing-up-container{
+    display: flex;
+    flex-wrap: nowrap;
+    height: 100vh;
+
+    .bg-light-ball{
+        position: absolute;
+        content: "";
+        width: 400px;
+        height: 400px;
+        background-color: $primary;
+        filter: blur(150px);
+    }
+    .left-box{
+        background-color: $bg_dark_blue;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 40px;
+        &::before{
+            @extend .bg-light-ball;
+            transform: translate(50%, -50%);
+            top: 0;
+            right: 0;
+        }
+        &::after{
+            @extend .bg-light-ball;
+            transform: translate(-50%, 50%);
+            bottom: 0;
+            left: 0;
+        }
+        h3{
+        font-family: 'Poppins';
+        font-style: italic;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 100%;
+        letter-spacing: 0.1em;
+        color: #FFFFFF;
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        position: relative;
+        }
+        .blue-dot{
+            margin-left: 5px;
+            width: 8px;
+            height: 8px;
+            bottom: 0;
+            background-color: #007DFA;
+            border-radius: 50px;
+        }
+        p{
+            /* Welcome. Start your journey now with our management system! */
+            font-family: 'Poppins';
+            font-style: italic;
+            font-weight: 300;
+            font-size: $fz-1+px;
+            line-height: 120%;
+            /* or 67px */
+            display: flex;
+            align-items: center;
+
+            background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.44) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    .right-box{
+        height: 100%;
+        width: 100%;
+        position: relative;
+
+        .create-acc-box{
+            background-color: white;
+            width: 65%;
+            position: absolute;
+            top: 50%;left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+            border-radius: 20px;
+            // append icon(with img tag) to BTNs(btn class also req), custom
+            .btn.google-btn{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include google-btn;
+            }
+            .have-acc{
+                color: $gray-text;
+                display: flex;
+                justify-content: center;
+                a{
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}
+
+// create dark mode exeptions for this page
+.sing-up-container.dark{
+    background: url('../asset/img/bg-login-dark.png') no-repeat center center;
+    background-size: cover;
+    .left-box{
+        display: none;
+    }
+    .create-acc-box{
+        background-color: $bg-dark;
+        width: 40%;
+        .google-btn{
+            background-color: $bg-dark-low;
+        }
+        input{
+            // background-color: $bg-dark;
+            background-color: $bg-dark;
+            &::placeholder{
+            color: $gray-text;
+            }
+        }
+        color: white;
+    }
+}
+
+.pass-input-container{
+    position: relative;
+
+    #togglePassword{
+        cursor: pointer;
+        position: absolute;
+        top: 45%;
+        right: 15px;
+        transform: translateY(-50%) scale(1.2);
+        color: silver;
+    }
+}

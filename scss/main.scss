@@ -1,0 +1,61 @@
+@import 'variables.scss';
+@import 'sign-up.scss';
+@import 'login.scss';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+button{
+    @include default-btn;
+}
+
+
+
+// swith BTN
+.theme-switch-box{
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+//logo
+.logo{
+    position: absolute;
+    z-index: 2;
+    top: 40px;
+    left: 40px;
+    h3{
+    font-family: 'Poppins';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 100%;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    position: relative;
+    }
+    .blue-dot{
+        margin-left: 5px;
+        width: 8px;
+        height: 8px;
+        bottom: 0;
+        background-color: #007DFA;
+        border-radius: 50px;
+    }
+}
+
+
+
+
+
+

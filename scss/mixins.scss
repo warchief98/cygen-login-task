@@ -1,0 +1,22 @@
+@import 'variables.scss';
+
+@mixin default-btn() {
+    border-radius: 50% ;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 16px;
+    line-height: 100%;
+  }
+@mixin google-btn(){
+    background-color: $primary_low;
+    span{
+        color: $primary;
+    }
+    img{
+        width: 20px;
+        height: 20px;
+        margin: 0 10px;
+        border-radius: 50%;
+    }
+}

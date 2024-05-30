@@ -1,0 +1,95 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+
+.bg-light-ball{
+    position: absolute;
+    content: "";
+    width: 500px;
+    height: 500px;
+    background-color: $primary;
+    filter: blur(200px);
+}
+
+.login-container{
+    height: 100vh;
+    background-color: $bg_dark_blue;
+    position: relative;
+    overflow: hidden;
+    &::before{
+        @extend .bg-light-ball;
+        transform: translate(50%, -50%);
+        top: 0;
+        right: 0;
+    }
+    &::after{
+        @extend .bg-light-ball;
+        transform: translate(-50%, 50%);
+        bottom: 0;
+        left: 0;
+    }
+    .create-acc-box{
+        // width: 40%;
+        background-color: white;
+        position: absolute;
+        top: 50%;left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+        border-radius: 20px;
+        @media screen and (max-width: $bp-small) {
+            width: 95%;
+        }
+        @media screen and (min-width: $bp-small) {
+            width: 80%;
+        }
+        @media screen and (min-width: $bp-large) {
+            width: 35%;
+        }
+        @media screen and (min-width: $bp-xlarge) {
+            //do Smth
+        }
+        @media screen and (min-width: $bp-xxlarge) {
+            //do Smth
+        }
+        // append icon(with img tag) to BTNs(btn class also req), custom
+        .btn.google-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @include google-btn;
+        }
+        .have-acc{
+            color: $gray-text;
+            display: flex;
+            justify-content: center;
+            a{
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+// create dark mode exeptions for this page
+.login-container.dark{
+    background: url('../asset/img/bg-login-dark.png') no-repeat center center;
+    background-size: cover;
+    &::before,&::after{
+        display: none;
+    }
+    .create-acc-box{
+        background-color: $bg-dark;
+        .google-btn{
+            background-color: $bg-dark-low;
+        }
+        input{
+            // background-color: $bg-dark;
+            background-color: $bg-dark;
+            &::placeholder{
+            color: $gray-text;
+            }
+        }
+        color: white;
+    }
+}
