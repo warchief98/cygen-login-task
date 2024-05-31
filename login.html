@@ -11,11 +11,13 @@
 </head>
 <body>
     <div id="mainContainer" class="login-container">
-        <!-- swith theme btn -->
-        <div class="form-switch theme-switch-box">
-            <label class="form-check-label" for="switch1">Theme</label>
-            <input class="form-check-input" type="checkbox" role="switch" id="switch1">
-        </div>
+        <!-- toggle theme -->
+        <label class="toggle">
+            <input type="checkbox" id="switch1">
+            <span class="slider"></span>
+            <span class="labels" data-on="Dark" data-off="Light"></span>
+          </label>
+
         <div class="d-flex align-items-baseline logo">
             <h3>BALA</h3>
             <div class="blue-dot"></div>
@@ -31,7 +33,11 @@
             </div>
             <!-- Password input -->
             <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
+                <div class="d-flex justify-content-between">
+                    <label for="password" class="form-label">Password</label>
+                    <a href="#">Forgot?</a>
+                </div>
+
                 <div class="pass-input-container">
                     <input type="password" class="form-control" id="password" placeholder="Enter your password">
                     <i class="bi bi-eye" id="togglePassword"></i>

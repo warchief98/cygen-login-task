@@ -74,6 +74,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             -webkit-text-fill-color: transparent;
+            
         }
     }
     .right-box{
@@ -114,17 +115,12 @@
 .sing-up-container.dark{
     background: url('../asset/img/bg-login-dark.png') no-repeat center center;
     background-size: cover;
-    .left-box{
-        display: none;
-    }
     .create-acc-box{
         background-color: $bg-dark;
-        width: 40%;
         .google-btn{
             background-color: $bg-dark-low;
         }
         input{
-            // background-color: $bg-dark;
             background-color: $bg-dark;
             &::placeholder{
             color: $gray-text;
